@@ -21,7 +21,7 @@
                         <th scope="col">No</th>
                         <th scope="col">Id Jenis</th>
                         <th scope="col">Nama Jenis Barang</th>
-                        <th scope="col">Aksi</th>
+                        <th scope="col">Aksii</th>
                     </tr>
                 </thead>
                 <tbody>
