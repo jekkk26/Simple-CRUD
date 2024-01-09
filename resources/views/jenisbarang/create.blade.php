@@ -31,8 +31,8 @@
                             </ul>
                         </div>
                     @endif
-                    <button type="submit" class="btn btn-dark btn-block mt-4">Tambah barang</button>
-                    <a href="/barang/jenis/" class="btn btn-dark btn-block mt-4">Kembali</a>
+                    <button type="submit" class="btn btn-success btn-block mt-4"><i class="bi bi-plus-lg"></i> Tambah Data Barang</button>
+                    <a href="/barang/jenis/" class="btn btn-warning btn-block mt-4"><i class="bi bi-arrow-left-circle"></i> Kembali</a>
                 </form>
             </div>
         </div>

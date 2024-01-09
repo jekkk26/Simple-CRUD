@@ -12,7 +12,7 @@
                 </div>
             @endif
 
-            <a href="/create/barangjenisbarang" type="button" class="btn btn-primary mb-4">Tambah Data Barang</a>
+            <a href="/create/barangjenisbarang" type="button" class="btn btn-primary mb-4"><i class="bi bi-plus-lg"></i> Tambah Data</a>
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -31,19 +31,19 @@
                             <td>{{ $item->id_jenis }}</td>
                             <td>{{ $item->kode_barang }}</td>
                             <td>
-                                 <a href="/edit/barangjenis/{{ $item->idbarangjenisbarang}}" class="btn btn-warning btn-sm">Edit</a>
+                                 <a href="/edit/barangjenis/{{ $item->idbarangjenisbarang}}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
                                  <form action="{{ route('destroy', $item->idbarangjenisbarang) }}" method="POST"
                                     style="display: inline-block;" onsubmit="return confirm('Yakin ingin hapus data?');">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-success btn-sm">Delete</button>
+                                    <button type="submit" class="btn btn-success btn-sm"><i class="bi bi-trash3-fill"></i>Hapus</a></button>
                                 </form>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <a href="/logout" class="btn btn-sm btn-danger">Logout >></a>
+            <a href="/logout" class="btn btn-sm btn-danger"><i class="bi bi-box-arrow-in-left"></i> Logout >></a>
         </main>
     </div>
 @endsection

@@ -51,8 +51,8 @@
                 @endif
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success">Tambah</button>
-                    <a href="/barang/barangdanjenis" class="btn btn-warning btn-block mt-2">Kembali</a>
+                    <button type="submit" class="btn btn-success"><i class="bi bi-plus-lg"></i> Tambah</button>
+                    <a href="/barang/barangdanjenis" class="btn btn-warning btn-block mt-2"><i class="bi bi-arrow-left-circle"></i> Kembali</a>
                 </div>
             </form>
         </main>

@@ -12,8 +12,8 @@
                 </div>
             @endif
 
-            <a href="/create" type="button" class="btn btn-primary mb-4">Tambah Data Barang</a>
-            <a href="/barang/jenis" type="button" class="btn btn-primary mb-4">Data Jenis Barang</a>
+            <a href="/create" type="button" class="btn btn-primary mb-4"><i class="bi bi-plus-lg"></i> Tambah Data Barang</a>   
+            <a href="/barang/jenis" type="button" class="btn btn-primary mb-4"><i class="bi bi-archive"></i> Data Jenis Barang</a>
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -33,17 +33,17 @@
                             <td>{{ $item->kode_barang }}</td>
                             <td>{{ $item->nama_barang }}</td>
                             <td>{{ $item->stok }}</td>
-                            <td>{{ $item->harga }}</td>
+                            <td>{{ $item->harga }}</td> 
                             <td>{{ $item->deskripsi }}</td>
                             <td>
-                                <a href="/edit/{{ $item->kode_barang }}" class="btn btn-warning btn-sm">Edit</a>
-                                <a href="/destory/barang/{{ $item->kode_barang }}" class="btn btn-success btn-sm">Hapus</a>
+                                <a href="/edit/{{ $item->kode_barang }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
+                                <a href="/destory/barang/{{ $item->kode_barang }}" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i>Hapus</a>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <a href="/logout" class="btn btn-sm btn-danger">Logout >></a>
+            <a href="/logout" class="btn btn-sm btn-success"> <i class="bi bi-box-arrow-left"></i> Logout >></a>
         </main>
     </div>
 @endsection
