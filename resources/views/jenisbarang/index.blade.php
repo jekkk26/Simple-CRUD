@@ -12,9 +12,8 @@
                 </div>
             @endif
 
-            <a href="/create/jenisbarang" type="button" class="btn btn-dark mb-4">Tambah Data Barang</a>
-            <a href="/barang" type="button" class="btn btn-dark mb-4">Data Barang</a>
-            <a href="/barang/barangdanjenis" type="button" class="btn btn-dark mb-4">Data Jenis & Barang</a>
+            <a href="/create/jenisbarang" type="button" class="btn btn-primary mb-4">Tambah Data Barang</a>
+            <a href="/barang" type="button" class="btn btn-primary mb-4">Data Barang</a>
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -31,14 +30,15 @@
                             <td>{{ $item->id_jenis }}</td>
                             <td>{{ $item->nama_jenis_barang }}</td>
                             <td>
-                                <a href="/edit/jenis/{{ $item->id_jenis}}" class="btn btn-dark btn-sm">Edit</a>
-                                <a href="/destroy/jenisbarang/{{ $item->id_jenis }}" class="btn btn-dark btn-sm">Hapus</a>
+                                <a href="/edit/jenis/{{ $item->id_jenis}}" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="/destroy/jenisbarang/{{ $item->id_jenis }}" class="btn btn-success btn-sm">Hapus</a>
                                 {{-- @dump($item); --}}
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
+            <a href="/logout" class="btn btn-sm btn-danger">Logout >></a>
         </main>
     </div>
 @endsection

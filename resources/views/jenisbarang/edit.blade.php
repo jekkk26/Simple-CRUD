@@ -32,8 +32,8 @@
                             </ul>
                         </div>
                     @endif
-                    <button type="submit" class="btn btn-dark btn-block mt-4">Simpan Perubahan</button>
-                    <a href="/barang/jenis/" class="btn btn-dark btn-block mt-4">Kembali</a>
+                    <button type="submit" class="btn btn-success btn-block mt-4">Simpan Perubahan</button>
+                    <a href="/barang/jenis/" class="btn btn-warning btn-block mt-4">Kembali</a>
                 </form>
             </div>
         </div>

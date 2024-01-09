@@ -49,7 +49,7 @@
                 </div>
                 @endif
                 <button type="submit" class="btn btn-dark btn-block mt-4">Tambah barang</button>
-                <a href="/" class="btn btn-dark btn-block mt-4">Kembali</a>
+                <a href="/admin/barang" class="btn btn-dark btn-block mt-4">Kembali</a>
             </form>
         </div>
     </div>

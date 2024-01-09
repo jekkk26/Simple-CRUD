@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BarangJenisBarangController;
 use App\Http\Controllers\JenisBarangController;
+use App\Http\Controllers\SesiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +18,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', [BarangController::class, 'index'])->name('barang.index');
+Route::middleware(['guest'])->group(function () {
+    Route::get('/', [SesiController::class, 'index'])->name('login');
+    Route::post('/', [SesiController::class, 'login']);
+});
+
+Route::get('/home', function () {
+    return redirect('/admin');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/admin/admin', [AdminController::class, 'admin'])->middleware('userAkses:admin');
+    Route::get('/admin/staf', [AdminController::class, 'staf'])->middleware('userAkses:staf');
+    Route::get('/logout', [SesiController::class, 'logout']);
+});
+
+Route::get('/admin/barang', [BarangController::class, 'index'])->name('barang.index');
 Route::get('/create', [BarangController::class, 'create'])->name('barang.create');
 Route::post('/barang/store', [BarangController::class, 'store'])->name('barang.store');
 Route::get('/edit/{id}', [BarangController::class, 'edit'])->name('barang.edit');

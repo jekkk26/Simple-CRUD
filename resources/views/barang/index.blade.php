@@ -12,9 +12,8 @@
                 </div>
             @endif
 
-            <a href="/create" type="button" class="btn btn-dark mb-4">Tambah Data Barang</a>
-            <a href="/barang/jenis" type="button" class="btn btn-dark mb-4">Data Jenis Barang</a>
-            <a href="/barang/barangdanjenis" type="button" class="btn btn-dark mb-4">Data Jenis & Barang</a>
+            <a href="/create" type="button" class="btn btn-primary mb-4">Tambah Data Barang</a>
+            <a href="/barang/jenis" type="button" class="btn btn-primary mb-4">Data Jenis Barang</a>
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -37,13 +36,14 @@
                             <td>{{ $item->harga }}</td>
                             <td>{{ $item->deskripsi }}</td>
                             <td>
-                                <a href="/edit/{{ $item->kode_barang }}" class="btn btn-dark btn-sm">Edit</a>
-                                <a href="/destory/barang/{{ $item->kode_barang }}" class="btn btn-dark btn-sm">Hapus</a>
+                                <a href="/edit/{{ $item->kode_barang }}" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="/destory/barang/{{ $item->kode_barang }}" class="btn btn-success btn-sm">Hapus</a>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
+            <a href="/logout" class="btn btn-sm btn-danger">Logout >></a>
         </main>
     </div>
 @endsection

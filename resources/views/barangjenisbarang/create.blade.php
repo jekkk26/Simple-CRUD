@@ -51,8 +51,8 @@
                 @endif
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark">Tambah</button>
-                    <a href="/barang/barangdanjenis" class="btn btn-dark btn-block mt-2">Kembali</a>
+                    <button type="submit" class="btn btn-success">Tambah</button>
+                    <a href="/barang/barangdanjenis" class="btn btn-warning btn-block mt-2">Kembali</a>
                 </div>
             </form>
         </main>
