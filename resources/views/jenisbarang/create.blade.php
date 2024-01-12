@@ -12,7 +12,8 @@
                     <div class="mb-3 row">
                         <label for="id_jenis" class="col-sm-3 col-form-label">Id Jenis</label>
                         <div class="col-sm-9">
-                            <input type="number" class="form-control" id="id_jenis" name="id_jenis" required>
+                            <input type="number" class="form-control" id="id_jenis" value="{{ $tambahjenis }}"
+                                name="id_jenis" required readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -31,8 +32,10 @@
                             </ul>
                         </div>
                     @endif
-                    <button type="submit" class="btn btn-success btn-block mt-4"><i class="bi bi-plus-lg"></i> Tambah Data Barang</button>
-                    <a href="/barang/jenis/" class="btn btn-warning btn-block mt-4"><i class="bi bi-arrow-left-circle"></i> Kembali</a>
+                    <button type="submit" class="btn btn-success btn-block mt-4"><i class="bi bi-plus-lg"></i> Tambah Data
+                        Barang</button>
+                    <a href="/barang/jenis/" class="btn btn-warning btn-block mt-4"><i class="bi bi-arrow-left-circle"></i>
+                        Kembali</a>
                 </form>
             </div>
         </div>

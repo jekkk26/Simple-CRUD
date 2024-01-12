@@ -13,7 +13,6 @@
             @endif
 
             <a href="/create/jenisbarang" type="button" class="btn btn-primary mb-4"> <i class="bi bi-plus-lg"></i>Tambah Data Barang</a>
-            <a href="/barang" type="button" class="btn btn-primary mb-4"><i class="bi bi-box-seam"></i> Data Barang</a>
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -38,7 +37,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <a href="/logout" class="btn btn-sm btn-success"> <i class="bi bi-box-arrow-left"></i> Logout >></a>
+            <a href="/admin/admin" class="btn btn-success btn-block mt-1"><i class="bi bi-arrow-left-circle"></i> Kembali</a>
         </main>
     </div>
 @endsection

@@ -18,7 +18,8 @@
                 <div class="mb-3 row">
                     <label for="idbarangjenisbarang" class="col-sm-3 col-form-label">ID</label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" id="idbarangjenisbarang" name="idbarangjenisbarang" required>
+                        <input type="number" class="form-control" id="idbarangjenisbarang" value="{{ $tambahbarangjenis }}"
+                            name="idbarangjenisbarang" required readonly>
                     </div>
                 </div>
 
@@ -26,7 +27,8 @@
                     <label for="kode_barang">Kode Barang:</label>
                     <select name="kode_barang" class="form-control">
                         @foreach ($barang as $barangItem)
-                            <option value="{{ $barangItem->kode_barang }}">{{ $barangItem->kode_barang }} - {{ $barangItem->nama_barang }}</option>
+                            <option value="{{ $barangItem->kode_barang }}">{{ $barangItem->kode_barang }} -
+                                {{ $barangItem->nama_barang }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -35,7 +37,8 @@
                     <label for="id_jenis">ID Jenis:</label>
                     <select name="id_jenis" class="form-control">
                         @foreach ($jenis as $jenisItem)
-                            <option value="{{ $jenisItem->id_jenis }}">{{ $jenisItem->id_jenis }} - {{ $jenisItem->nama_jenis_barang }}</option>
+                            <option value="{{ $jenisItem->id_jenis }}">{{ $jenisItem->id_jenis }} -
+                                {{ $jenisItem->nama_jenis_barang }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -52,7 +55,8 @@
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success"><i class="bi bi-plus-lg"></i> Tambah</button>
-                    <a href="/barang/barangdanjenis" class="btn btn-warning btn-block mt-2"><i class="bi bi-arrow-left-circle"></i> Kembali</a>
+                    <a href="/barang/barangdanjenis" class="btn btn-warning btn-block mt-2"><i
+                            class="bi bi-arrow-left-circle"></i> Kembali</a>
                 </div>
             </form>
         </main>

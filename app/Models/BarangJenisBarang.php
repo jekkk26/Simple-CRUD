@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class BarangJenisBarang extends Model
 {
     use HasFactory;
+    public $incrementing = false;
+    protected $keyType = 'integer';
     protected $table = 'barang_dan_jenisbarang';
     protected $primaryKey = 'idbarangjenisbarang';
     protected $fillable = [
@@ -24,5 +26,9 @@ class BarangJenisBarang extends Model
     public function jenisBarang()
     {
         return $this->belongsTo(jenisBarang::class, 'id_jenis', 'id_jenis');
+    }
+    public function jenis()
+    {
+        return $this->belongsTo(JenisBarang::class, 'id_jenis', 'id_jenis');
     }
 }

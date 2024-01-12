@@ -21,8 +21,12 @@ class BarangController extends Controller
      */
     public function create()
     {
-        return view('barang.create');
+        $tambahbarang = Barang::orderBy('kode_barang', 'desc')->first();
+        $tambahbarang = $tambahbarang ? $tambahbarang->kode_barang + 1 : 1;
+
+        return view('barang.create', compact('tambahbarang'));
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -94,7 +98,7 @@ class BarangController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
 
-        return redirect()->route('barang.index')->with('success', 'Berhasil menambah data!');
+        return redirect()->route('barang.index')->with('success', 'Berhasil Mengupdate data!');
     }
 
     /**
@@ -113,5 +117,16 @@ class BarangController extends Controller
         } else {
             return redirect()->route('barang.index')->with('error', 'Record not found');
         }
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        $barang = Barang::where('nama_barang', 'like', "%$keyword%")
+            ->orWhere('kode_barang', 'like', "%$keyword%")
+            ->orWhere('deskripsi', 'like', "%$keyword%")
+            ->get();
+
+        return view('barang.index', compact('barang', 'keyword'));
     }
 }

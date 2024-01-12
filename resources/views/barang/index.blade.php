@@ -12,8 +12,16 @@
                 </div>
             @endif
 
+            
             <a href="/create" type="button" class="btn btn-primary mb-4"><i class="bi bi-plus-lg"></i> Tambah Data Barang</a>   
-            <a href="/barang/jenis" type="button" class="btn btn-primary mb-4"><i class="bi bi-archive"></i> Data Jenis Barang</a>
+            <form action="admin/barang/search" method="GET" class="mb-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="keyword" placeholder="Cari barang...">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i> Cari</button>
+                    </div>
+                </div>
+            </form>
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -39,11 +47,11 @@
                                 <a href="/edit/{{ $item->kode_barang }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>
                                 <a href="/destory/barang/{{ $item->kode_barang }}" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i>Hapus</a>
                             </td>
-                        </tr>
+                        </tr>   
                     @endforeach
                 </tbody>
             </table>
-            <a href="/logout" class="btn btn-sm btn-success"> <i class="bi bi-box-arrow-left"></i> Logout >></a>
+            <a href="/admin/admin" class="btn btn-success btn-block mt-1"><i class="bi bi-arrow-left-circle"></i> Kembali</a>
         </main>
     </div>
 @endsection

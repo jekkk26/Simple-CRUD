@@ -23,9 +23,12 @@ class BarangJenisBarangController extends Controller
      */
     public function create()
     {
+        $tambahbarangjenis = BarangJenisBarang::orderBy('idbarangjenisbarang', 'desc')->first();
+        $tambahbarangjenis = $tambahbarangjenis ? $tambahbarangjenis->idbarangjenisbarang + 1 : 1;
+
         $barang = Barang::all();
         $jenis = JenisBarang::all();
-        return view('barangjenisbarang.create', compact('barang', 'jenis'));
+        return view('barangjenisbarang.create', compact('barang', 'jenis', 'tambahbarangjenis'));
     }
 
     /**

@@ -13,9 +13,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('barang_dan_jenisbarang', function (Blueprint $table) {
-            $table->string('idbarangjenisbarang')->primary();
-            $table->string('kode_barang');
-            $table->string('id_jenis');
+            $table->id('idbarangjenisbarang');
+            $table->unsignedBigInteger('kode_barang');
+            $table->unsignedBigInteger('id_jenis');
             $table->timestamps();
 
             $table->foreign('kode_barang')->references('kode_barang')->on('barang');

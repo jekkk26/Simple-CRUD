@@ -21,9 +21,12 @@ class JenisBarangController extends Controller
      */
     public function create()
     {
-        return view('jenisbarang.create');
+        $latestJenis = JenisBarang::latest('id_jenis')->first();
+        $tambahjenis = $latestJenis ? $latestJenis->id_jenis + 1 : 1;
+    
+        return view('jenisbarang.create', compact('tambahjenis'));
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */

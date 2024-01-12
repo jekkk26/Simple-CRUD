@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class jenisBarang extends Model
 {
     use HasFactory;
+    public $incrementing = true;
+    protected $keyType = 'integer';
     protected $table = 'jenisbarang';
     protected $primaryKey = 'id_jenis';
     protected $fillable = [

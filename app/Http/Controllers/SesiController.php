@@ -18,30 +18,36 @@ class SesiController extends Controller
             'email' => 'required',
             'password' => 'required',
         ], [
-
             'email.required' => 'Email Wajib Diisi',
             'password.required' => 'Password Wajib Diisi',
         ]);
 
         $infologin = [
             'email' => $request->email,
-            'password' => $request->password
+            'password' => $request->password,
         ];
 
         if (Auth::attempt($infologin)) {
-            if (Auth::user()->role == 'admin') {
-                return redirect('admin/admin');
-            } elseif (Auth::user()->role == 'staf') {
-                return redirect()->route('barangjenisbarang.index');
+            $user = Auth::user();
+
+            if ($user->role == 'admin') {
+                return redirect()->route('admin')->with('success', 'Anda Berhasil Login');
+            } elseif ($user->role == 'staf') {
+                return redirect()->route('barangjenisbarang.index')->with('Welcome', 'Selamat Datang ' . $user->name);
             }
-        } else {
-            return redirect('')->withErrors('Username dan Password Yang Dimasukan Tidak Sesuai')->withInput();
         }
+
+        return redirect()->route('login')->withErrors('Username dan Password Tidak sesuai')->withInput();
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect('');
+        return redirect()->route('login')->with('success', 'Anda Berhasil Logout');
+    }
+
+    public function homepage()
+    {
+        return view('homepage');
     }
 }
