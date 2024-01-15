@@ -12,7 +12,7 @@
                 <div class="mb-3 row">
                     <label for="kode_barang" class="col-sm-3 col-form-label">Kode Barang</label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="kode_barang" value="{{ $barang->kode_barang }}" required>
+                        <input type="number" class="form-control" name="kode_barang" value="{{ $barang->kode_barang }}" required readonly>
                     </div>
                 </div>
                 <div class="mb-3 row">

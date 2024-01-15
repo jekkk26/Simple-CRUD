@@ -8,62 +8,78 @@
     <title>Login Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="<path-to-your-style.css>" rel="stylesheet">
     <style>
-        .divider:after,
-        .divider:before {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: #eee;
+        body {
+            background-image: url('https://rederp.co.id/wp-content/uploads/2022/07/prosedur-pengambilan-barang-di-gudang.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
         }
 
-        .h-custom {
-            height: calc(100% - 73px);
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Adjusted background color */
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
-        @media (max-width: 450px) {
-            .h-custom {
-                height: 100%;
-            }
+        .login-container h2 {
+            color: #ffffff;
+            /* Text color adjusted to white */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-form label {
+            color: #ffffff;
+            /* Text color adjusted to white */
+            font-weight: bold;
+        }
+
+        .login-form input {
+            margin-bottom: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            width: 100%;
+            color: #000000;
+            /* Text color adjusted to black */
+        }
+
+        .login-form button {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 8px;
+            padding: 12px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-form button:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
         }
     </style>
 </head>
 
-
 <body>
-    <section class="vh-100">
-        <div class="container-fluid h-custom">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                        class="img-fluid" alt="Sample image">
-                </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form action="" method="POST">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-container">
+                    <h2>Login</h2>
+                    <form class="login-form" action="" method="POST">
                         @csrf
-                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                            <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-                            <button type="button" class="btn btn-primary btn-floating mx-1">
-                                <i class="fab fa-facebook-f"></i>
-                            </button>
-                            <button type="button" class="btn btn-primary btn-floating mx-1">
-                                <i class="fab fa-twitter"></i>
-                            </button>
-                            <button type="button" class="btn btn-primary btn-floating mx-1">
-                                <i class="fab fa-linkedin-in"></i>
-                            </button>
-                        </div>
-
-                        <div class="divider d-flex align-items-center my-4">
-                            <p class="text-center fw-bold mx-3 mb-0">Or</p>
-                        </div>
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
-                                    @foreach ($errors->all() as $item)
-                                        <li>{{ $item }}</li>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -72,51 +88,32 @@
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" value="{{ old('email') }}" name="email" class="form-control">
-                            <label class="form-label" for="form3Example3">Email address</label>
                         </div>
 
-
-                        <!-- Password input -->
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" name="password" class="form-control">
-                            <label class="form-label" for="form3Example4">Password</label>
                         </div>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <!-- Checkbox -->
-                            {{-- <div class="form-check mb-0">
-                                <input class="form-check-input me-2" type="checkbox" value=""
-                                    id="form2Example3" />
-                                <label class="form-check-label" for="form2Example3">
-                                    Remember me
-                                </label>
-                            </div> --}}
-                            {{-- <a href="#!" class="text-body">Forgot password?</a> --}}
-                        </div>
-                        <div class="text-white mb-3 mb-md-0">
-                            @if(session('success'))
-                                <div class="alert alert-success">
-                                    {{ session('success') }}
-                                </div>
-                            @endif
 
                         <div class="mb-3 d-grid">
                             <button name="submit" type="submit" class="btn btn-primary">Login</button>
                         </div>
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
                     </form>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div
-            class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-            <div class="text-white mb-3 mb-md-0">
-                Copyright © 2020. All rights reserved.
-            </div>
+    <!-- JavaScript dan Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-rZlEw3IP9buPuetKw+PHJwEKuC1SNXNUeCE1t1e2IgTtCQ8E64ukFb5QOp+0nFd" crossorigin="anonymous"></script>
+    <!-- Tambahkan skrip JavaScript kustom Anda di sini -->
+</body>
 
-            <div>
-                <a href="#!" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
-                <a href="#!" class="text-white me-4"><i class="fab fa-twitter"></i></a>
-                <a href="#!" class="text-white me-4"><i class="fab fa-google"></i></a>
-                <a href="#!" class="text-white"><i class="fab fa-linkedin-in"></
+</html>

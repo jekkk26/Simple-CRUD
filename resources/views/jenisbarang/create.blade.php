@@ -10,13 +10,6 @@
                 <form action="/store/jenisbarang" method="POST">
                     @csrf
                     <div class="mb-3 row">
-                        <label for="id_jenis" class="col-sm-3 col-form-label">Id Jenis</label>
-                        <div class="col-sm-9">
-                            <input type="number" class="form-control" id="id_jenis" value="{{ $tambahjenis }}"
-                                name="id_jenis" required readonly>
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
                         <label for="nama_jenis_barang" class="col-sm-3 col-form-label">Nama Jenis Barang</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="nama_jenis_barang" name="nama_jenis_barang"

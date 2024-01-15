@@ -17,7 +17,6 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Id Jenis</th>
                         <th scope="col">Nama Jenis Barang</th>
                         <th scope="col">Aksi</th>
                     </tr>
@@ -26,7 +25,6 @@
                     @foreach ($jenisbarang as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $item->id_jenis }}</td>
                             <td>{{ $item->nama_jenis_barang }}</td>
                             <td>
                                 <a href="/edit/jenis/{{ $item->id_jenis}}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i>Edit</a>

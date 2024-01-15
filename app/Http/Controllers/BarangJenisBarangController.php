@@ -37,13 +37,11 @@ class BarangJenisBarangController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'idbarangjenisbarang' => 'required',
             'kode_barang' => 'required',
             'id_jenis' => 'required',
         ]);
 
         BarangJenisBarang::create([
-            'idbarangjenisbarang' => $request->idbarangjenisbarang,
             'kode_barang' => $request->kode_barang,
             'id_jenis' => $request->id_jenis,
         ]);

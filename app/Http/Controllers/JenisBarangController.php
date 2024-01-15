@@ -33,12 +33,10 @@ class JenisBarangController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_jenis' => 'required',
             'nama_jenis_barang' => 'required',
         ]);
 
         JenisBarang::create([
-            'id_jenis' => $request->id_jenis,
             'nama_jenis_barang' => $request->nama_jenis_barang,
         ]);
 
@@ -71,12 +69,10 @@ class JenisBarangController extends Controller
         $jenis = JenisBarang::find($id);
 
         $request->validate([
-            'id_jenis',
             'nama_jenis_barang',
         ]);
 
         $jenis->update([
-            'id_jenis' => $request->id_jenis,
             'nama_jenis_barang' => $request->nama_jenis_barang,
         ]);
 

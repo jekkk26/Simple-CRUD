@@ -9,13 +9,13 @@
                 <hr class="my-4">
                 <form action="{{ url('/jenis/update', ['id' => $jenisbarang->id_jenis]) }}" method="POST">
                     @csrf
-                    <div class="mb-3 row">
+                    {{-- <div class="mb-3 row">
                         <label for="id_jenis" class="col-sm-3 col-form-label">Id Jenis</label>
                         <div class="col-sm-9">
                             <input type="number" class="form-control" name="id_jenis" value="{{ $jenisbarang->id_jenis }}"
                                 required>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="mb-3 row">
                         <label for="nama_jenis_barang" class="col-sm-3 col-form-label">Nama Jenis Barang</label>
                         <div class="col-sm-9">

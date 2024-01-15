@@ -24,7 +24,6 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">No</th>
-                        <th scope="col">ID</th>
                         <th scope="col">Jenis Barang</th>
                         <th scope="col">Nama Barang</th>
                         <th scope="col">Aksi</th>
@@ -34,7 +33,6 @@
                     @foreach ($barangjenisbarang as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $item->idbarangjenisbarang }}</td>
                             <td>{{ $item->jenis->nama_jenis_barang }}</td>
                             <td>{{ $item->barang->nama_barang }}</td>
                             <td>

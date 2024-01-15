@@ -14,15 +14,6 @@
 
             <form action="/store/barangjenisbarang" method="POST">
                 @csrf
-
-                <div class="mb-3 row">
-                    <label for="idbarangjenisbarang" class="col-sm-3 col-form-label">ID</label>
-                    <div class="col-sm-9">
-                        <input type="number" class="form-control" id="idbarangjenisbarang" value="{{ $tambahbarangjenis }}"
-                            name="idbarangjenisbarang" required readonly>
-                    </div>
-                </div>
-
                 <div class="form-group">
                     <label for="kode_barang">Kode Barang:</label>
                     <select name="kode_barang" class="form-control">
